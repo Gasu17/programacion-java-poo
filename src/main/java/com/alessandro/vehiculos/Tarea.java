@@ -2,7 +2,7 @@ package com.alessandro.vehiculos;
 
 public class Tarea {
 	// Atributos 
-	public String titulo ;
+	private String titulo ;
 	private int duracion ;
 	private boolean estado ;
 	

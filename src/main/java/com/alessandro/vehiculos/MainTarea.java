@@ -7,7 +7,7 @@ public class MainTarea {
 		
 		Tarea objeto1 = new Tarea("Tarea 1", 2 , true);
 		objeto1.setTitulo("KLK");
-		System.out.println(objeto1.titulo);
+		System.out.println(objeto1.getTitulo());
 		
 		Tarea objeto2 = new Tarea("Otra tarea", 2 , false);
 		System.out.println(objeto2.getDuracion());
