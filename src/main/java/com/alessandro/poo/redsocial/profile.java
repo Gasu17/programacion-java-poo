@@ -1,6 +1,9 @@
 package com.alessandro.poo.redsocial;
 
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Profile {
 
@@ -12,6 +15,7 @@ public class Profile {
 	private int post;
 	private boolean verifiedAccount;
 	private ProfileStatus status;
+	List<Publication> posts = new ArrayList<>();
 
 	public void showInfo() {
 		System.out.println(this.username);
@@ -41,17 +45,30 @@ public class Profile {
 		}
 
 	}
-	public boolean checkStatus () {
+
+	public boolean checkStatus() {
+		return this.status == ProfileStatus.ACTIVE;
+	}
+
+	public void changeStatus() {
 		if (this.status == ProfileStatus.ACTIVE) {
-			return true;
-
+			this.status = ProfileStatus.INACTIVE;
 		} else {
-			return false;
+			this.status = ProfileStatus.ACTIVE;
 		}
-		
-	}
-	public boolean changeStatus(checkStatus) {
-		
+
 	}
 
+	public void addPublication(String text, int likes, LocalDateTime time) {
+		Publication publication = new Publication(text, likes, time);
+		posts.add(publication);
+
+	}
+
+	public void showPublications() {
+		for (Publication publication : posts) {
+			// estoy intentando llamar a al metodo SHOW que esta en publication pero no me deja
+			System.out.println(show());
+		}
+	}
 }
