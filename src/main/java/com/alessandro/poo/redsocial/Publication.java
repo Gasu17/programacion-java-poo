@@ -1,12 +1,15 @@
 package com.alessandro.poo.redsocial;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Publication {
 	
 	private String text;
 	private LocalDateTime time;
 	private int likes;
+	
+	private static final String DATE_TIME_FORMATTER ="dd/MM/yyyy HH:mm:ss";
 	
 	
 	public void show () {
@@ -19,7 +22,7 @@ public class Publication {
 		return text;
 	}
 	// Constructor 
-	public Publication(String text, int Likes, LocalDateTime time) {
+	public Publication(String text) {
 		super();
 		this.text = text;
 		this.likes=0;
@@ -58,10 +61,15 @@ public class Publication {
 	}
 	
 	
-	 // private String formatearHora( ) {
-		//  return this.time.format(DATE_TIME_FORMATTER);
+   private String formatearHora( ) {
+	  return this.time.format(DateTimeFormatter.ofPattern(DATE_TIME_FORMATTER));
 	
-	
-
-}
+  }
+   
+   
+   public static void main(String[] args) {
+	   Publication p = new Publication("hola mundo");
+	   System.out.println(p.formatearHora());
+   }
+   
 }

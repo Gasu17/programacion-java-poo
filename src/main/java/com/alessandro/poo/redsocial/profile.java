@@ -17,6 +17,66 @@ public class Profile {
 	private ProfileStatus status;
 	List<Publication> posts = new ArrayList<>();
 
+
+	public Profile() {
+		super();
+		this.posts = new ArrayList<>();
+	}
+	public Profile(String username, String biography, String location) {
+		super();
+		this.username = username;
+		this.biography = biography;
+		this.location = location;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
+
+	public String getBiography() {
+		return biography;
+	}
+
+	public void setBiography(String biography) {
+		this.biography = biography;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public int getFollowers() {
+		return followers;
+	}
+
+	public void setFollowers(int followers) {
+		this.followers = followers;
+	}
+
+	public int getPost() {
+		return post;
+	}
+
+	public void setPost(int post) {
+		this.post = post;
+	}
+
 	public void showInfo() {
 		System.out.println(this.username);
 
@@ -59,16 +119,16 @@ public class Profile {
 
 	}
 
-	public void addPublication(String text, int likes, LocalDateTime time) {
-		Publication publication = new Publication(text, likes, time);
+	public void addPublication(String text) {
+		Publication publication = new Publication(text);
 		posts.add(publication);
 
 	}
 
 	public void showPublications() {
 		for (Publication publication : posts) {
-			// estoy intentando llamar a al metodo SHOW que esta en publication pero no me deja
-			System.out.println(show());
+			
+			publication.show();
 		}
 	}
 }
